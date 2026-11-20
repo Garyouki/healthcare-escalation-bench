@@ -41,6 +41,7 @@ dependencies = []
 
 [project.optional-dependencies]
 reproduce = ["numpy>=1.26", "pandas>=2.1", "scipy>=1.11", "matplotlib>=3.8"]
+inspect = ["inspect-ai>=0.3.100"]
 dev = ["pytest>=8"]
 
 [project.scripts]

@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Inspect AI task: `src/escalation_bench/inspect_task.py` (`pip install -e ".[inspect]"`), with a log exporter for the package scorer.
+
 ## 0.1.0
 
 First public release of the benchmark artifact.
