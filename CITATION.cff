@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this benchmark, please cite the paper below."
+title: "Healthcare Escalation Bench"
+type: software
+version: "0.1.0"
+license: MIT
+repository-code: "https://github.com/Garyouki/healthcare-escalation-bench"
+authors:
+  - family-names: Zheng
+    given-names: Zihao
+  - family-names: Yao
+    given-names: Junyi
+  - family-names: Li
+    given-names: Baichuan
+  - family-names: Long
+    given-names: Jiayu
+keywords:
+  - llm-agents
+  - healthcare-ai
+  - evaluation
+  - escalation
+preferred-citation:
+  type: article
+  title: "Auditing Escalation Reliability in Healthcare LLM Agents: A Perturbation-Controlled Benchmark of Workflow-State Failures"
+  authors:
+    - family-names: Zheng
+      given-names: Zihao
+    - family-names: Yao
+      given-names: Junyi
+    - family-names: Li
+      given-names: Baichuan
+    - family-names: Long
+      given-names: Jiayu
+  year: 2026
+  identifiers:
+    - type: other
+      value: "arXiv:2610.21270"
+  url: "https://arxiv.org/abs/2610.21270"

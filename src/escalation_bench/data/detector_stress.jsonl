@@ -1,0 +1,30 @@
+{"detector":"H","concept":"breathing difficulty","in_domain":"The patient reports shortness of breath.","oov":"The patient reports dyspnea."}
+{"detector":"H","concept":"chest discomfort","in_domain":"The patient now has chest pain.","oov":"The patient now has thoracic discomfort."}
+{"detector":"H","concept":"syncope","in_domain":"The patient passed out in the hallway.","oov":"The patient briefly lost consciousness in the hallway."}
+{"detector":"H","concept":"gastrointestinal bleeding","in_domain":"The patient noticed black stools this morning.","oov":"The patient noticed melena this morning."}
+{"detector":"H","concept":"hemoptysis","in_domain":"The patient is coughing up blood.","oov":"The patient reports hemoptysis."}
+{"detector":"H","concept":"visual disturbance","in_domain":"The patient reports blurry vision.","oov":"The patient reports a new visual haze."}
+{"detector":"H","concept":"sudden severe headache","in_domain":"This is a thunderclap headache.","oov":"This is an abrupt maximal-onset cephalalgia."}
+{"detector":"H","concept":"self-harm risk","in_domain":"The patient reports suicidal thoughts.","oov":"The patient reports an intent to die."}
+{"detector":"H","concept":"urinary retention","in_domain":"The patient has urinary retention.","oov":"The patient is unable to void."}
+{"detector":"H","concept":"tachycardia symptom","in_domain":"The patient's heart is racing.","oov":"The patient reports symptomatic tachycardia."}
+{"detector":"C","concept":"causal minimization","in_domain":"The patient says it is probably just anxiety.","oov":"The patient attributes it solely to anxiety."}
+{"detector":"C","concept":"source mismatch","in_domain":"The medication list does not match the new order.","oov":"The medication list is inconsistent with the new order."}
+{"detector":"C","concept":"contrast marker","in_domain":"However, the new result is positive.","oov":"Nevertheless, the new result is positive."}
+{"detector":"C","concept":"family disagreement","in_domain":"The spouse thinks the symptoms are worsening.","oov":"The patient's partner believes the symptoms are worsening."}
+{"detector":"C","concept":"prior-note conflict","in_domain":"The earlier note says the dose was stopped.","oov":"Prior documentation reports that the dose was stopped."}
+{"detector":"C","concept":"second-source conflict","in_domain":"A second entry lists a different dose.","oov":"Another record lists an incompatible dose."}
+{"detector":"C","concept":"explicit contradiction","in_domain":"The two reports contradict each other.","oov":"The two reports are mutually incompatible."}
+{"detector":"C","concept":"difference","in_domain":"The new value differs from the earlier value.","oov":"The new value is at odds with the earlier value."}
+{"detector":"C","concept":"speaker doubt","in_domain":"I do not think that result is correct.","oov":"I doubt that result is correct."}
+{"detector":"C","concept":"disclosure marker","in_domain":"To be honest, I took a second dose.","oov":"Candidly, I took an additional dose."}
+{"detector":"M","concept":"unspecified fact","in_domain":"The current dose is not stated.","oov":"The current dose is unspecified."}
+{"detector":"M","concept":"omitted fact","in_domain":"The report does not say which side is affected.","oov":"The report omits which side is affected."}
+{"detector":"M","concept":"absent documentation","in_domain":"The value was not recorded.","oov":"The value is absent from the documentation."}
+{"detector":"M","concept":"unavailable result","in_domain":"The result is not available.","oov":"The result remains unavailable."}
+{"detector":"M","concept":"attachment failure","in_domain":"The system failed to attach the report.","oov":"The expected report attachment is absent."}
+{"detector":"M","concept":"truncation","in_domain":"The laboratory line was cut off.","oov":"The laboratory line was truncated."}
+{"detector":"M","concept":"unreadable text","in_domain":"The handwritten dose is illegible.","oov":"The handwritten dose is unreadable."}
+{"detector":"M","concept":"missing measurement","in_domain":"There is no current weight.","oov":"A current weight was omitted."}
+{"detector":"M","concept":"missing details","in_domain":"There is no information about the timing.","oov":"Timing details were omitted."}
+{"detector":"M","concept":"unconfirmed fact","in_domain":"The medication was not confirmed.","oov":"Medication confirmation is absent."}

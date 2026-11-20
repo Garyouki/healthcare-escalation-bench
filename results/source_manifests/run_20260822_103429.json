@@ -1,0 +1,65 @@
+{
+  "started_at": "2026-08-22T16:10:45.951431+00:00",
+  "host": "macOS-26.5.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "dataset_manifest": {
+    "n_seeds": 40,
+    "n_episodes": 400,
+    "episodes_per_task": {
+      "documentation_update": 100,
+      "evidence_retrieval": 100,
+      "patient_messaging": 100,
+      "triage_handoff": 100
+    },
+    "reference_actions_by_variant": {
+      "clean:ANSWER": 70,
+      "clean:ESCALATE": 10,
+      "conflict:ABSTAIN": 8,
+      "conflict:ASK_CLARIFICATION": 42,
+      "conflict:ESCALATE": 30,
+      "late_risk:ESCALATE": 80,
+      "missing:ABSTAIN": 2,
+      "missing:ASK_CLARIFICATION": 78,
+      "stale:ANSWER": 70,
+      "stale:ESCALATE": 10
+    },
+    "n_dev": 80,
+    "n_test": 320,
+    "n_escalation_required": 130,
+    "dataset_sha256": "c705eab46b507f58b51aea5efa39223db83317abb1084a9ab55332925ce102db",
+    "generator": "programmatic assembly from hand-authored seeds (no LLM generation)"
+  },
+  "ollama_version": {
+    "version": "0.32.15"
+  },
+  "models": {
+    "gemma3:4b": {
+      "digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+      "size": 3338801804
+    },
+    "llama3.2:3b": {
+      "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+      "size": 2019393189
+    },
+    "qwen3:4b": {
+      "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+      "size": 2497293931
+    },
+    "qwen3:1.7b": {
+      "digest": "8f68893c685c3ddff2aa3fffce2aa60a30bb2da65ca488b61fff134a4d1730e7",
+      "size": 1359293444
+    }
+  },
+  "conditions": {
+    "vanilla": "a8a921977692ffbd",
+    "uncertainty": "ca76ea07df1f02b2"
+  },
+  "options": {
+    "temperature": 0.0,
+    "num_ctx": 4096,
+    "num_predict": 350,
+    "seed": 17
+  },
+  "n_episodes": 400,
+  "finished_at": "2026-08-22T16:30:29.123053+00:00"
+}

@@ -1,0 +1,27 @@
+{
+  "n_seeds": 40,
+  "n_episodes": 400,
+  "episodes_per_task": {
+    "documentation_update": 100,
+    "evidence_retrieval": 100,
+    "patient_messaging": 100,
+    "triage_handoff": 100
+  },
+  "reference_actions_by_variant": {
+    "clean:ANSWER": 70,
+    "clean:ESCALATE": 10,
+    "conflict:ABSTAIN": 8,
+    "conflict:ASK_CLARIFICATION": 42,
+    "conflict:ESCALATE": 30,
+    "late_risk:ESCALATE": 80,
+    "missing:ABSTAIN": 2,
+    "missing:ASK_CLARIFICATION": 78,
+    "stale:ANSWER": 70,
+    "stale:ESCALATE": 10
+  },
+  "n_dev": 80,
+  "n_test": 320,
+  "n_escalation_required": 130,
+  "dataset_sha256": "c705eab46b507f58b51aea5efa39223db83317abb1084a9ab55332925ce102db",
+  "generator": "programmatic assembly from hand-authored seeds (no LLM generation)"
+}

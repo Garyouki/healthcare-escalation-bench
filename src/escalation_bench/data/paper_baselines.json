@@ -1,0 +1,144 @@
+{
+  "test": {
+    "Gemma-3-4B": {
+      "n": 320,
+      "decision_accuracy": 0.709375,
+      "esc_sensitivity": 0.52,
+      "esc_specificity": 0.9863636363636363,
+      "missed_escalation_rate": 0.48,
+      "utility_5:1": 0.08125,
+      "utility_10:1": -0.66875
+    },
+    "Llama-3.2-3B": {
+      "n": 320,
+      "decision_accuracy": 0.46875,
+      "esc_sensitivity": 0.1,
+      "esc_specificity": 1.0,
+      "missed_escalation_rate": 0.9,
+      "utility_5:1": -0.6875,
+      "utility_10:1": -2.09375
+    },
+    "Qwen3.5-9B": {
+      "n": 320,
+      "decision_accuracy": 0.85,
+      "esc_sensitivity": 0.68,
+      "esc_specificity": 0.9818181818181818,
+      "missed_escalation_rate": 0.32,
+      "utility_5:1": 0.375,
+      "utility_10:1": -0.125
+    },
+    "Qwen3-1.7B": {
+      "n": 320,
+      "decision_accuracy": 0.390625,
+      "esc_sensitivity": 0.03,
+      "esc_specificity": 1.0,
+      "missed_escalation_rate": 0.97,
+      "utility_5:1": -0.81875,
+      "utility_10:1": -2.334375
+    },
+    "Qwen3-4B": {
+      "n": 320,
+      "decision_accuracy": 0.6125,
+      "esc_sensitivity": 0.54,
+      "esc_specificity": 0.9818181818181818,
+      "missed_escalation_rate": 0.46,
+      "utility_5:1": 0.1125,
+      "utility_10:1": -0.60625
+    }
+  },
+  "dev": {
+    "Gemma-3-4B": {
+      "n": 80,
+      "decision_accuracy": 0.625,
+      "esc_sensitivity": 0.6666666666666666,
+      "esc_specificity": 1.0,
+      "missed_escalation_rate": 0.3333333333333333,
+      "utility_5:1": 0.25,
+      "utility_10:1": -0.375
+    },
+    "Llama-3.2-3B": {
+      "n": 80,
+      "decision_accuracy": 0.45,
+      "esc_sensitivity": 0.2,
+      "esc_specificity": 1.0,
+      "missed_escalation_rate": 0.8,
+      "utility_5:1": -0.8,
+      "utility_10:1": -2.3
+    },
+    "Qwen3.5-9B": {
+      "n": 80,
+      "decision_accuracy": 0.925,
+      "esc_sensitivity": 0.8666666666666667,
+      "esc_specificity": 1.0,
+      "missed_escalation_rate": 0.13333333333333333,
+      "utility_5:1": 0.7,
+      "utility_10:1": 0.45
+    },
+    "Qwen3-1.7B": {
+      "n": 80,
+      "decision_accuracy": 0.325,
+      "esc_sensitivity": 0.06666666666666667,
+      "esc_specificity": 1.0,
+      "missed_escalation_rate": 0.9333333333333333,
+      "utility_5:1": -1.1,
+      "utility_10:1": -2.85
+    },
+    "Qwen3-4B": {
+      "n": 80,
+      "decision_accuracy": 0.6,
+      "esc_sensitivity": 0.5333333333333333,
+      "esc_specificity": 1.0,
+      "missed_escalation_rate": 0.4666666666666667,
+      "utility_5:1": -0.05,
+      "utility_10:1": -0.925
+    }
+  },
+  "all": {
+    "Gemma-3-4B": {
+      "n": 400,
+      "decision_accuracy": 0.6925,
+      "esc_sensitivity": 0.5538461538461539,
+      "esc_specificity": 0.9888888888888889,
+      "missed_escalation_rate": 0.4461538461538462,
+      "utility_5:1": 0.115,
+      "utility_10:1": -0.61
+    },
+    "Llama-3.2-3B": {
+      "n": 400,
+      "decision_accuracy": 0.465,
+      "esc_sensitivity": 0.12307692307692308,
+      "esc_specificity": 1.0,
+      "missed_escalation_rate": 0.8769230769230769,
+      "utility_5:1": -0.71,
+      "utility_10:1": -2.135
+    },
+    "Qwen3.5-9B": {
+      "n": 400,
+      "decision_accuracy": 0.865,
+      "esc_sensitivity": 0.7230769230769231,
+      "esc_specificity": 0.9851851851851852,
+      "missed_escalation_rate": 0.27692307692307694,
+      "utility_5:1": 0.44,
+      "utility_10:1": -0.01
+    },
+    "Qwen3-1.7B": {
+      "n": 400,
+      "decision_accuracy": 0.3775,
+      "esc_sensitivity": 0.038461538461538464,
+      "esc_specificity": 1.0,
+      "missed_escalation_rate": 0.9615384615384616,
+      "utility_5:1": -0.875,
+      "utility_10:1": -2.4375
+    },
+    "Qwen3-4B": {
+      "n": 400,
+      "decision_accuracy": 0.61,
+      "esc_sensitivity": 0.5384615384615384,
+      "esc_specificity": 0.9851851851851852,
+      "missed_escalation_rate": 0.46153846153846156,
+      "utility_5:1": 0.08,
+      "utility_10:1": -0.67
+    }
+  },
+  "_note": "Uncertainty-prompt runs from the paper (Ollama, temperature 0). Regenerate with tests/test_reproduce.py."
+}

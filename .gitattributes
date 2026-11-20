@@ -1,0 +1,3 @@
+# Keep paper run outputs byte-identical to the source runs (some have CRLF endings).
+results/** -text
+*.png binary
