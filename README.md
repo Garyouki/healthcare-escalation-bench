@@ -107,6 +107,31 @@ Runs are resumable. Use `--limit 20` for a quick check first.
 Missing, invalid, or duplicate predictions are listed, never silently dropped.
 [examples/sample_report.md](https://github.com/Garyouki/healthcare-escalation-bench/blob/main/examples/sample_report.md) shows a full report.
 
+### Run with Inspect AI
+
+The benchmark is also an [Inspect AI](https://inspect.aisi.org.uk) task, so any
+model that Inspect supports can be evaluated with one command:
+
+```bash
+git clone https://github.com/Garyouki/healthcare-escalation-bench
+cd healthcare-escalation-bench
+pip install -e ".[inspect]"
+inspect eval src/escalation_bench/inspect_task.py --model openai/gpt-4o-mini
+inspect eval src/escalation_bench/inspect_task.py --model ollama/llama3.1:8b -T condition=uncertainty
+```
+
+Task options: `-T split=test|dev|all` (default `test`, the paper's 320 episodes) and
+`-T condition=vanilla|uncertainty` (the paper's two system prompts). Inspect reports
+decision accuracy, utility at 5:1 and 10:1, the missed-escalation rate, and the
+invalid-output rate. Inspect counts an invalid output as a wrong decision, while the
+paper drops it; for the paper's exact metrics (with calibration), export the log and
+use the package scorer:
+
+```bash
+python -m escalation_bench.inspect_task logs/<file>.eval > preds.jsonl
+escalation-bench score preds.jsonl --split test
+```
+
 ## Metrics
 
 - **Decision accuracy:** the chosen action is in the episode's acceptable set.

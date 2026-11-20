@@ -30,3 +30,18 @@ jobs:
           python -m pip install build twine
           python -m build
           python -m twine check --strict dist/*
+
+  inspect:
+    # The Inspect AI task (for the UK AISI Inspect Evals register).
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -e ".[dev,inspect]"
+      - run: python -m pytest -q tests/test_inspect_task.py -rs
+      - name: Run the task end to end with Inspect's mock model
+        run: inspect eval src/escalation_bench/inspect_task.py --model mockllm/model --limit 5 --log-dir /tmp/logs
