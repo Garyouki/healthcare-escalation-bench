@@ -1,3 +1,5 @@
 # Keep paper run outputs byte-identical to the source runs (some have CRLF endings).
 results/** -text
 *.png binary
+# Keep the dataset byte-identical on every OS (its SHA-256 is checked).
+src/escalation_bench/data/** -text

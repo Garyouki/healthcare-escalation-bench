@@ -105,7 +105,7 @@ def write_dataset(out_dir: Path) -> dict:
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     episodes = build_episodes()
-    with open(out_dir / "seeds.jsonl", "w") as f:
+    with open(out_dir / "seeds.jsonl", "w", encoding="utf-8") as f:
         for s in ALL_SEEDS:
             f.write(json.dumps(s) + "\n")
     (out_dir / "episodes.jsonl").write_bytes(episodes_bytes(episodes))
@@ -126,6 +126,6 @@ def write_dataset(out_dir: Path) -> dict:
         "dataset_sha256": hashlib.sha256(episodes_bytes(episodes)).hexdigest(),
         "generator": "programmatic assembly from hand-authored seeds (no LLM generation)",
     }
-    with open(out_dir / "dataset_manifest.json", "w") as f:
+    with open(out_dir / "dataset_manifest.json", "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2)
     return manifest
