@@ -40,7 +40,7 @@ def test_published_main_table(key):
 
 def test_bundled_baselines_are_current():
     path = resources.files("escalation_bench") / "data" / "paper_baselines.json"
-    base = json.loads(path.read_text())["test"]
+    base = json.loads(path.read_text(encoding="utf-8"))["test"]
     names = {"Qwen3.5-9B": "qwen3.5:9b", "Gemma-3-4B": "gemma3:4b",
              "Llama-3.2-3B": "llama3.2:3b", "Qwen3-1.7B": "qwen3:1.7b", "Qwen3-4B": "qwen3:4b"}
     for name, model in names.items():

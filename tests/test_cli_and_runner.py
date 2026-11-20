@@ -25,7 +25,7 @@ def test_run_is_resumable_and_sends_only_transcripts(tmp_path, monkeypatch):
     out = tmp_path / "preds.jsonl"
     runner.run("fake-model", out, limit=5, workers=2, log=lambda s: None)
     runner.run("fake-model", out, limit=5, workers=2, log=lambda s: None)
-    recs = [json.loads(l) for l in out.read_text().splitlines()]
+    recs = [json.loads(l) for l in out.read_text(encoding="utf-8").splitlines()]
     assert len(recs) == 10 and len({r["episode_id"] for r in recs}) == 10
     assert all("reference_action" not in u and "_clean" not in u for u in seen)
 
@@ -38,16 +38,16 @@ def test_score_command_writes_report_and_json(tmp_path, capsys):
     report, js = tmp_path / "report.md", tmp_path / "result.json"
     main(["score", str(preds), "--report", str(report), "--json", str(js),
           "--name", "Example agent", "--bootstrap", "50"])
-    text = report.read_text()
+    text = report.read_text(encoding="utf-8")
     for heading in ("# Escalation reliability audit: Example agent", "## By workflow-state variant",
                     "## Missed escalations", "## Reference points from the paper"):
         assert heading in text
-    assert json.loads(js.read_text())["overall"]["n"] == 320
+    assert json.loads(js.read_text(encoding="utf-8"))["overall"]["n"] == 320
     assert "scored 320 of 320 test episodes" in capsys.readouterr().out
 
 
 def test_export_command(tmp_path):
     out = tmp_path / "inputs.jsonl"
     main(["export", "--split", "dev", "--out", str(out)])
-    rows = [json.loads(l) for l in out.read_text().splitlines()]
+    rows = [json.loads(l) for l in out.read_text(encoding="utf-8").splitlines()]
     assert len(rows) == 80 and set(rows[0]) == {"episode_id", "task", "transcript"}
