@@ -24,7 +24,7 @@ LLM Agents: A Perturbation-Controlled Benchmark of Workflow-State Failures*
 ([arXiv:2610.21270](https://arxiv.org/abs/2610.21270)).
 
 > **Scope.** No real patient data is included. Reference actions follow one
-> documented study policy written by one author ([docs/reference_policy.md](docs/reference_policy.md)).
+> documented study policy written by one author ([docs/reference_policy.md](https://github.com/Garyouki/healthcare-escalation-bench/blob/main/docs/reference_policy.md)).
 > They are not clinician-adjudicated. Results measure agreement with that policy
 > under controlled changes. They do not show clinical safety or deployment
 > readiness. See [Limitations](#limitations).
@@ -32,6 +32,13 @@ LLM Agents: A Perturbation-Controlled Benchmark of Workflow-State Failures*
 ## Install
 
 Python 3.10 or newer. The core package has no dependencies.
+
+```bash
+python -m pip install healthcare-escalation-bench
+escalation-bench info
+```
+
+To work from source or reproduce the paper, clone the repository:
 
 ```bash
 git clone https://github.com/Garyouki/healthcare-escalation-bench.git
@@ -98,7 +105,7 @@ Runs are resumable. Use `--limit 20` for a quick check first.
 - The paper's five models on the same split, for context.
 
 Missing, invalid, or duplicate predictions are listed, never silently dropped.
-[examples/sample_report.md](examples/sample_report.md) shows a full report.
+[examples/sample_report.md](https://github.com/Garyouki/healthcare-escalation-bench/blob/main/examples/sample_report.md) shows a full report.
 
 ## Metrics
 
@@ -176,7 +183,7 @@ These are the open items from peer review. Contributions are very welcome.
    end to end.
 
 If you run the benchmark on your own system, please open an issue with your
-report or email the maintainer. See [CONTRIBUTING.md](CONTRIBUTING.md).
+report or email the maintainer. See [CONTRIBUTING.md](https://github.com/Garyouki/healthcare-escalation-bench/blob/main/CONTRIBUTING.md).
 
 ## Citation
 
@@ -194,5 +201,5 @@ report or email the maintainer. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
-Code: [MIT](LICENSE). Dataset (episodes, seeds, and bundled model outputs):
-[CC BY 4.0](DATA_LICENSE.md).
+Code: [MIT](https://github.com/Garyouki/healthcare-escalation-bench/blob/main/LICENSE). Dataset (episodes, seeds, and bundled model outputs):
+[CC BY 4.0](https://github.com/Garyouki/healthcare-escalation-bench/blob/main/DATA_LICENSE.md).
