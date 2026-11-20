@@ -47,6 +47,10 @@ dev = ["pytest>=8"]
 [project.scripts]
 escalation-bench = "escalation_bench.cli:main"
 
+# Lets Inspect find the task by name: inspect eval escalation_bench/healthcare_escalation
+[project.entry-points.inspect_ai]
+escalation_bench = "escalation_bench"
+
 [project.urls]
 Repository = "https://github.com/Garyouki/healthcare-escalation-bench"
 Issues = "https://github.com/Garyouki/healthcare-escalation-bench/issues"

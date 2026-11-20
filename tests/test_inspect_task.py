@@ -71,3 +71,51 @@ def test_log_export_matches_package_scorer_format():
     rows = predictions_from_log(log.location)
     assert sorted(r["episode_id"] for r in rows) == sorted(e["episode_id"] for e in eps)
     assert all(r["action"] == "ESCALATE" and r["confidence"] == 0.7 for r in rows)
+
+
+def test_record_to_sample_on_real_record():
+    from escalation_bench.inspect_task import record_to_sample
+
+    ep = load_episodes("test")[0]
+    sample = record_to_sample(ep)
+    assert sample.id == ep["episode_id"]
+    assert sample.target == ep["reference_action"]
+    assert sample.metadata["acceptable_actions"] == list(ep["acceptable_actions"])
+    assert sample.metadata["escalation_required"] == bool(ep["escalation_required"])
+    # the model input carries the transcript but none of the labels
+    assert ep["transcript"] in sample.input
+
+
+def test_clinical_system_prompt_inserts_paper_prompt():
+    from escalation_bench.inspect_task import clinical_system_prompt
+    from escalation_bench.prompts import CONDITIONS
+
+    with pytest.raises(ValueError):
+        clinical_system_prompt("no-such-condition")
+    for condition in ("vanilla", "uncertainty"):
+        log = _run([_reply("ANSWER")], limit=1, condition=condition)
+        first = log.samples[0].messages[0]
+        assert first.role == "system"
+        assert first.text == CONDITIONS[condition]
+
+
+def test_escalation_decision_scores_each_sample():
+    from escalation_bench.inspect_task import escalation_decision
+
+    assert callable(escalation_decision())
+    eps = load_episodes("test")[:3]
+    wrong = [a for a in ("ANSWER", "ASK_CLARIFICATION", "ABSTAIN", "ESCALATE")
+             if a not in eps[0]["acceptable_actions"]][0]
+    log = _run([_reply(wrong, 0.6), "garbage", _reply(eps[2]["reference_action"])], limit=3)
+    by_id = {s.id: s.scores["escalation_decision"] for s in log.samples}
+    values = sorted(sc.value for sc in by_id.values())
+    assert values.count("C") == 1 and values.count("I") == 2
+    actions = {sc.metadata["action"] for sc in by_id.values()}
+    assert None in actions and wrong in actions
+
+
+def test_package_exports_task():
+    import escalation_bench
+
+    assert "healthcare_escalation" in escalation_bench.__all__
+    assert escalation_bench.healthcare_escalation is healthcare_escalation
