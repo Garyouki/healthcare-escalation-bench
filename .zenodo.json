@@ -1,0 +1,38 @@
+{
+  "title": "healthcare-escalation-bench: Perturbation-controlled benchmark of when healthcare LLM agents should answer, ask, abstain, or escalate",
+  "upload_type": "software",
+  "description": "Perturbation-controlled benchmark of when healthcare LLM agents should answer, ask, abstain, or escalate. Source code: https://github.com/Garyouki/healthcare-escalation-bench",
+  "creators": [
+    {
+      "name": "Zheng, Zihao"
+    },
+    {
+      "name": "Yao, Junyi"
+    },
+    {
+      "name": "Li, Baichuan"
+    },
+    {
+      "name": "Long, Jiayu"
+    }
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "keywords": [
+    "llm-agents",
+    "healthcare-ai",
+    "evaluation",
+    "benchmark",
+    "escalation",
+    "trustworthy-ai",
+    "human-in-the-loop"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.48550/arXiv.2610.21270",
+      "relation": "isSupplementTo",
+      "scheme": "doi",
+      "resource_type": "publication-preprint"
+    }
+  ]
+}
