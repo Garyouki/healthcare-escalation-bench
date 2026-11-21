@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "healthcare-escalation-bench"
-version = "0.1.0"
+version = "0.1.1"
 description = "Perturbation-controlled benchmark of when healthcare LLM agents should answer, ask, abstain, or escalate."
 readme = "README.md"
 requires-python = ">=3.10"

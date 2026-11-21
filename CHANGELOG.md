@@ -1,7 +1,8 @@
 # Changelog
 
-## Unreleased
+## 0.1.1
 
+- Add Zenodo metadata so each release is archived with a citable DOI.
 - Inspect AI task: `src/escalation_bench/inspect_task.py` (`pip install -e ".[inspect]"`), with a log exporter for the package scorer.
 
 ## 0.1.0
