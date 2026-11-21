@@ -21,7 +21,9 @@ retrieval, patient messaging, and triage handoff.
 
 This is the companion artifact of *Auditing Escalation Reliability in Healthcare
 LLM Agents: A Perturbation-Controlled Benchmark of Workflow-State Failures*
-([arXiv:2610.21270](https://arxiv.org/abs/2610.21270)).
+([arXiv:2610.21270](https://arxiv.org/abs/2610.21270)). The data is also on
+the Hugging Face Hub:
+[youkijiudai/healthcare-escalation-bench](https://huggingface.co/datasets/youkijiudai/healthcare-escalation-bench).
 
 > **Scope.** No real patient data is included. Reference actions follow one
 > documented study policy written by one author ([docs/reference_policy.md](https://github.com/Garyouki/healthcare-escalation-bench/blob/main/docs/reference_policy.md)).
@@ -161,6 +163,17 @@ against the manifest.
 Each episode record in `src/escalation_bench/data/episodes.jsonl` includes the
 reference action, the acceptable set, the risk cues, the required facts, and a
 rationale, so every label can be inspected or replaced.
+
+The same data, plus the paper's 4,000 model predictions, is available as a
+Hugging Face dataset
+([youkijiudai/healthcare-escalation-bench](https://huggingface.co/datasets/youkijiudai/healthcare-escalation-bench)):
+
+```python
+from datasets import load_dataset
+
+episodes = load_dataset("youkijiudai/healthcare-escalation-bench", "episodes", split="test")
+predictions = load_dataset("youkijiudai/healthcare-escalation-bench", "predictions", split="train")
+```
 
 ## Reproduce the paper
 
