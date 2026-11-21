@@ -3,6 +3,7 @@ message: "If you use this benchmark, please cite the paper below."
 title: "Healthcare Escalation Bench"
 type: software
 version: "0.1.1"
+doi: "10.5281/zenodo.24430270"
 license: MIT
 repository-code: "https://github.com/Garyouki/healthcare-escalation-bench"
 authors:

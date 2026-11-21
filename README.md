@@ -1,5 +1,7 @@
 # Healthcare Escalation Bench
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24430270.svg)](https://doi.org/10.5281/zenodo.24430270)
+
 A benchmark for one question: **when the workflow state changes, does an LLM agent
 still know whether to answer, ask, abstain, or hand the case to a human?**
 
